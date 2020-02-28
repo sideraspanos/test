@@ -1,10 +1,10 @@
 {
 	"c_project": {
 		// Directory στο οποίο βρίσκεται το πρόγραμμα
-		"dir": "programs/minmax",
+		"dir": "programs/hello",
 
 		// Όνομα του εκτελέσιμου προγράμματος
-		"program": "minmax",
+		"program": "hello",
 
 		// Ορίσματα του προγράμματος.
 		// - Για ανακατεύθυνση εισόδου βάζουμε ορίσματα: "<", "input-file"
