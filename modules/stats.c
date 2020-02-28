@@ -1,6 +1,7 @@
 // stats.c - Υλοποίηση του stats module
 
 #include "stats.h"
+#include <string.h>
 
 int stats_find_min(int array[], int size) {
 	int min = INT_MAX;          // "default" τιμή, μεγαλύτερη από όλες
@@ -20,4 +21,16 @@ int stats_find_max(int array[], int size) {
 			max = array[i];		// βρέθηκε νέο μέγιστο
 	
 	return max;
+}
+
+
+// Επιστρέφει το μεγαλύτερο από τα a, b, όπου η σύγκριση γίνεται
+// με βάση τη συνάρτηση compare.
+
+Pointer generic_max(Pointer a, Pointer b, CompareFunc comp) {
+    // Καλούμε την comp για να μας συγκρίνει τους αριθμούς, επιστρέφουμε a ή b ανάλογα
+    if(strcmp(a, b) > 0)
+        return a;
+    else
+        return b;
 }
