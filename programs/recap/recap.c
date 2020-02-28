@@ -6,22 +6,23 @@
 
 // συμπληρώστε τα παρακάτω
 struct point_2d {
-	// ...
+	double x;
+	double y;
 };
-// typedef .... Point2d;
+typedef struct point_2d* Point2d;
 
 // διορθώστε τη swap
-void swap(int a, int b) {
-	int temp = a;
-	a = b;
-	b = a;
+void swap(int* a, int* b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 void test_swap() {
 	int a = 1;
 	int b = 2;
 
-	swap(a, b);		// η γραμμή αυτή θέλει αλλαγή
+	swap(&a, &b);		// η γραμμή αυτή θέλει αλλαγή
 
 	if(a < b) {
 		printf("Not swapped!\n");
@@ -31,7 +32,7 @@ void test_swap() {
 void test_struct() {
 	// Αλλάξτε το struct και typedef στην αρχή του αρχείου, ΟΧΙ τα παρακάτω
 	Point2d point = malloc(sizeof(*point));
-	point->x = 1.2;
+	point->x = 1.2; //(*point).x = 1.2
 	point->y = 1.2;
 
 	printf("point with coordinates: (%f, %f)\n", point->x, point->y);
